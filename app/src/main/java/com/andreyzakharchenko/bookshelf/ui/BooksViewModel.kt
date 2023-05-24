@@ -30,10 +30,10 @@ class BooksViewModel(
         private set
 
     init {
-        getBooks("book")
+        getBooks()
     }
 
-    fun getBooks(query: String, maxResult: Int = 40) {
+    fun getBooks(query: String = "book", maxResult: Int = 40) {
         viewModelScope.launch {
             bookUiState = BookUiState.Loading
             bookUiState = try {
